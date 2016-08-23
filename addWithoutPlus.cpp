@@ -1,6 +1,3 @@
-#include <iostream>
-using namespace std;
-
 /*
  * 如何不适用'+' '- '*' '/'实现加法运算
  */
@@ -15,13 +12,6 @@ class AddWithoutPlus{
             return getSum(cxor, cand);
         }
 };
-
-int main(void) {
-    AddWithoutPlus obj;
-    int result = obj.getSum(3,4);
-    printf("%d\n", result);
-    return 0;
-}
 
 /*
  * 1.用亦或先做不进位加法
