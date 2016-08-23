@@ -6,7 +6,7 @@
  *   ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-class Solution {
+class ReverseLinkedList{
     public:
         ListNode* reverseList1(ListNode* head) {
             if(head && head->next) {
