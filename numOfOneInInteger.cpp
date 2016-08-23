@@ -1,6 +1,3 @@
-#include<iostream>
-using namespace std;
-
 /*
  * 求一个二进制整数中1的个数
  */
@@ -31,10 +28,3 @@ class NumOfOneInInteger {
         }
 };
 
-int main(void) {
-    NumOfOneInInteger obj;
-    //int num = obj.numOfOneInInteger1(-1);
-    int num = obj.numOfOneInInteger2(-1);
-    printf("%d\n", num);
-    return 0;
-}
