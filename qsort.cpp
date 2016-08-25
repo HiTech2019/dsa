@@ -16,9 +16,7 @@ class QuickSort{
                 j--;
             }
             if(i < j) {
-                int tmp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = tmp;
+                swap(arr[i], arr[j]);
                 i++;
                 j--;
             }
