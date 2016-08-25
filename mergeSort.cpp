@@ -9,7 +9,7 @@ class MergeSort{
 
         void mergeSort(int arr[], int len) {
             int* a = arr;
-            int* b = new int[10]; 
+            int* b = new int[len]; 
 
             //外层循环是决定内层循环每次合并元素的个数,直到<len
             //依次为:1->2->4->8->16->---
@@ -30,9 +30,7 @@ class MergeSort{
                         b[k++] = a[start2++];
                 }
                 //a是本次合并的结果,b本来没用但是需要保存arr的地址,所以只能交换
-                int* temp = a;
-                a = b;
-                b = temp;
+                swap(a, b);
             }
             //跳出外层循环后a就是排好序的,但是我们必须把结果放到arr中
             //因为上边a和b不断交换,到底谁指向arr需要判断
