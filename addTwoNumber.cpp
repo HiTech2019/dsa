@@ -16,8 +16,8 @@ class Solution {
     public:
         ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
             int carry = 0;
-            ListNode* prev = new ListNode(-1);
-            ListNode* back = prev;
+            ListNode tmp(-1);
+            ListNode* prev = &tmp;
             while(l1 || l2) {
                 //求l1和l2的元素
                 const int ai = !l1 ? 0 : l1->val;
@@ -37,7 +37,7 @@ class Solution {
             if (carry > 0) {
                 prev->next = new ListNode(carry);
             }
-            return back->next;
+            return tmp.next;
         }
 };
 
