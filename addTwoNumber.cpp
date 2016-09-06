@@ -17,25 +17,26 @@ class Solution {
         ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
             int carry = 0;
             ListNode tmp(-1);
-            ListNode* prev = &tmp;
+            ListNode* l3 = &tmp;
             while(l1 || l2) {
                 //求l1和l2的元素
-                const int ai = !l1 ? 0 : l1->val;
-                const int bi = !l2 ? 0 : l2->val;
+                //l1->val = l1 ? l1->val : 0; //因为l1->value可能不存在, 即无法赋值
+                const int l1v = l1 ? l1->val : 0;
+                const int l2v = l2 ? l2->val : 0;
                 //求和
-                const int value = (ai + bi + carry) % 10;
+                const int value = (l1v + l2v + carry) % 10;
                 //求进位
-                carry = (ai + bi + carry) / 10;
+                carry = (l1v + l2v + carry) / 10;
 
-                prev->next = new ListNode(value);
-                prev = prev->next;
+                l3->next = new ListNode(value);
+                l3 = l3->next;
                 
-                l1 = !l1 ? NULL : l1->next;
-                l2 = !l2 ? NULL : l2->next;
+                l1 = l1 ? l1->next : NULL;
+                l2 = l2 ? l2->next : NULL;
             }
             //如果有最后一个进位
             if (carry > 0) {
-                prev->next = new ListNode(carry);
+                l3->next = new ListNode(carry);
             }
             return tmp.next;
         }
