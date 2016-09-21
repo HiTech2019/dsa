@@ -9,6 +9,18 @@
 class ReverseLinkedList{
     public:
         ListNode* reverseList1(ListNode* head) {
+            ListNode* prev = NULL;
+            ListNode* cur = head;
+            while(cur) {
+                ListNode* tmp = cur->next;
+                cur->next = prev;
+                prev = cur;
+                cur = tmp;
+            }
+            return prev;
+        }
+
+        ListNode* reverseList2(ListNode* head) {
             if(head && head->next) {
                 ListNode* l1 = head;
                 ListNode* l2 = l1->next;
@@ -21,18 +33,6 @@ class ReverseLinkedList{
                 (head = l2)->next = l1;
             }
             return head;
-        }
-
-        ListNode* reverseList2(ListNode* head) {
-            ListNode* prev = NULL;
-            ListNode* cur = head;
-            while(cur) {
-                ListNode* tmp = cur->next;
-                cur->next = prev;
-                prev = cur;
-                cur = tmp;
-            }
-            return prev;
         }
 
         ListNode* reverseList3(ListNode* head) {
