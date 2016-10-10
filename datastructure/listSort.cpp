@@ -38,7 +38,7 @@ class ListSort{
 
             ListNode dummy(-1);
             ListNode *p = &dummy;
-            for(; l1 && l2 ; p = p->next) {
+            while(l1 && l2) {
                 if(l1->val > l2->val) {
                     p->next = l2;
                     l2 = l2->next;
@@ -46,6 +46,7 @@ class ListSort{
                     p->next = l1;
                     l1 = l1->next;
                 }
+                p = p->next;
             }
             p->next = l1 != NULL ? l1 : l2;
             return dummy.next;

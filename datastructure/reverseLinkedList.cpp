@@ -39,7 +39,7 @@ class ReverseLinkedList{
             if (!head || !head->next) {
                 return head;
             }
-            ListNode p = reverseList(head->next);
+            ListNode p = reverseList3(head->next);
             //下边从倒数第二个元素才开始执行
             head->next->next = head;
             head->next = NULL;
