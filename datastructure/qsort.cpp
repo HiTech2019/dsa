@@ -7,17 +7,19 @@ class QuickSort{
             int i = left;
             int j = right;
             int temp = arr[i];
-            while(i < j && arr[j] >= temp) {
-                j--;
-            }
-            if(i < j) {
-                arr[i] = arr[j];
-            }
-            while(i < j && arr[i] <= temp) {
-                i++;
-            }
-            if(i < j) {
-                arr[j] = arr[i];
+            while(i < j) {
+                while(i < j && arr[j] >= temp) {
+                    j--;
+                }
+                if(i < j) {
+                    arr[i] = arr[j];
+                }
+                while(i < j && arr[i] <= temp) {
+                    i++;
+                }
+                if(i < j) {
+                    arr[j] = arr[i];
+                }
             }
             arr[i] = temp;
 

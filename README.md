@@ -5,7 +5,7 @@
     - [把字符串转为整数atoi](./algorithm/atoi.cpp)
     - [求一个二进制整数中1的个数](./algorithm/numOfOneInInteger.cpp)
     - [判断一个字符串是否是回文](./algorithm/validPalindrome.cpp)
-    - [判断一个字符串是否是回文](./algorithm/validPalindrome.cpp)
+    - [求一个数组中和为s的两个数的下标](./algorithm/twoSum.cpp)
     - [求数组中最大的n个数](./algorithm/maxN.cpp)
 
 - 常见的数据结构
